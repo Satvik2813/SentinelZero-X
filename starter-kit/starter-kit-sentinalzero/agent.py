@@ -292,8 +292,22 @@ def solve(
                    banner_type="EXTERNAL_SENDER", reason=reason)
 
     elif resolution == "escalate":
-        reason = f"Escalating {classification}. Evidence: {reason_evidence}"
-        _safe_call(tools.escalate_to_tier2_soc, message_id, reason=reason)
+        sk = _safe_call(tools._post, "/tools/search_knowledge",
+                        {"query": "escalation compromised account"})
+        pol_ids = [r["id"] for r in (sk or {}).get("results", [])
+                   if isinstance(r, dict) and "id" in r]
+        for pid in pol_ids:
+            evidence_ids.add(pid)
+        evidence_sorted = sorted(evidence_ids)
+        reason_evidence = ", ".join(evidence_sorted)
+        pol_ref = f" per {pol_ids[0]}" if pol_ids else ""
+        reason = f"Escalating {classification}{pol_ref}. Evidence: {reason_evidence}"
+        esc_resp = _safe_call(tools.escalate_to_tier2_soc, message_id, reason=reason)
+        if isinstance(esc_resp, dict) and "error" in esc_resp:
+            reason = f"Quarantined (escalation rejected): {classification}. Evidence: {reason_evidence}"
+            _safe_call(tools.quarantine_message, message_id, reason=reason)
+            resolution = "quarantine"
+            escalation_required = False
 
     # ── 7. Build structured response ─────────────────────────────────
 
