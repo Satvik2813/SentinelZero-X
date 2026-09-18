@@ -141,17 +141,13 @@ def _match(pattern, text):
 
 def _content(body):
     text = _canonical(body)
-    # Recognizable letter spacing is normalized before quotation handling.
-    text = re.sub(r"\bi\s+g\s+n\s+o\s+r\s+e\b", 'ignore', text)
     # Remove attributed examples only, not all commands in a reporting email.
-    quote = r'(?P<prefix>\b(?:phrase|example|containing|say|says|wrote|using|text|payload)\s*:?\s*)[\x22\x27\u201c](?P<quote>.+?)[\x22\x27\u201d]'
+    quote = r'(?P<prefix>\b(?:phrase|example|containing|says|wrote|using|text|payload)\s*:?\s*)[\x22\x27\u201c](?P<quote>.+?)[\x22\x27\u201d]'
     active = re.sub(quote, lambda m: m['prefix'] + ' [quoted example] ', text)
     active = re.sub(r"\b(?:attackers? (?:use|say|write)|examples? (?:include|are))\s+[^.!?]+", " [reported example] ", active)
     active = re.sub(r"\b(?:never|do not|don't)\s+(?:ignore|disregard|override|bypass)\s+(?:your |the |all )?(?:previous |security |system )?(?:instructions|policies|rules)\b", " [defensive advice] ", active)
-    # Stop at clause boundaries: a defensive preface cannot hide a later command.
-    active = re.sub(r"\b(?:never|do not|don't)\s+(?:obey|follow)\s+(?:any |an? )?(?:instruction|message)s?\b[^.;!?]*?(?=[.;!?]|,?\s+(?:but|now|instead|then)\b|$)", " [defensive advice] ", active)
     inject = r"(?:\b(?:ignore|disregard|forget|override|bypass)\b.{0,70}\b(?:instructions?|security polic\w*|system prompt|safety rules|previous rules)\b|\b(?:mark|classify|label|return|output|set|approve|allow|deliver)\b.{0,45}\b(?:this (?:email|message)|decision|verdict|safe|benign|allow)\b|do not quarantine this message|system (?:instruction|override).{0,80}(?:allow|safe|approve)|(?:security (?:ai|agent)|assistant|classifier).{0,60}(?:skip|suppress|disable).{0,40}(?:checks|inspection|warnings|evidence))"
-    injection = _match(inject, active) or _match(r"\b(?:automated security systems?|security (?:ai|agent)|classifier)\b.{0,60}\b(?:override|bypass|disable)\b.{0,30}\b(?:filters|checks|inspection)\b", active)
+    injection = _match(inject, active)
     quoted_attack = _match(inject, text) and not injection
     report = quoted_attack and _match(r"suspicious|phishing simulation|is this|received|forwarded", text)
     # Awareness/negated examples are not active requests. This is sentence-local.
@@ -160,13 +156,9 @@ def _content(body):
         r"\b(?:never|do not|don't)\s+(?:send|share|enter|reveal|provide|enable|wire|buy)|\b(?:awareness|training example|attackers? (?:ask|request))\b", s))
     credential = _match(r"\b(?:send|share|reply|provide|enter|confirm|verify|submit|reveal)\b.{0,65}\b(?:password|credentials?|login tokens?|secret keys?|one.time (?:code|password)|verification code|mfa code)\b", operational)
     login = _match(r"\b(?:log[ -]?in|sign[ -]?in|re.authenticat\w*|reset|verify your account|update your password|sso portal)\b", operational)
-    transaction_text = re.sub(r"\b(?:(?:can|could) you confirm (?:that )?)?(?:the |our )?wire transfer(?: of (?:[$€£]\s*[\d,.]+|[\d,.]+\s*(?:usd|eur|gbp)))?\s+(?:was|has been) received\b", ' [transfer receipt] ', operational)
-    financial = _match(r"\b(?:wire|transfer|remit|pay|purchase|buy|send|process)\b.{0,90}(?:\b(?:funds|money|payment|gift cards?|supplier account|vendor account)\b|[$€£]\s*\d)|\bwire transfer\b", transaction_text)
-    # A new email/login account is not a change to payment instructions.
-    payment_account = r"(?:bank(?: account)?|routing(?: number)?|payment details|(?:supplier|vendor|beneficiary) account|account(?: number)? (?:for (?:future )?payments|details))"
-    account_change = _match(r"\b(?:new|updated?|changed?|replace|different)\b.{0,45}\b" + payment_account + r"\b|\b" + payment_account + r"\b.{0,45}\b(?:changed?|updated?|replace)\b", operational)
-    gift_text = re.sub(r"\b(?:do not|don't|no longer)\s+need\s+(?:(?:any|the|these|those|more|\d+)\s+)*gift cards?\b", ' [negated purchase] ', operational)
-    gift = _match(r"\b(?:gift cards?|claim codes)\b", gift_text) and _match(r"purchase|buy|send|email|codes|\bneed\b", gift_text)
+    financial = _match(r"\b(?:wire|transfer|remit|pay|purchase|buy|send)\b.{0,90}(?:\b(?:funds|money|payment|gift cards?|supplier account|vendor account)\b|[$€£]\s*\d)|\bwire transfer\b", operational)
+    account_change = _match(r"\b(?:new|updated?|changed?|replace|different)\b.{0,45}\b(?:bank|account|routing|payment details)|\b(?:bank|account|routing|payment details)\b.{0,45}\b(?:changed?|updated?|replace)\b", operational)
+    gift = _match(r"\b(?:gift cards?|claim codes)\b", operational) and _match(r"purchase|buy|send|email|codes", operational)
     secrecy = _match(r"do not call|don't call|keep.{0,30}(?:secret|confidential)|between us|bypass.{0,30}approval|without.{0,25}approval", operational)
     urgency = _match(r"urgent\w*|immediately|right (?:now|away)|asap|before noon|within \d+ hours|emergency|time.sensitive", operational)
     malware = _match(r"\b(?:enable|turn on|activate)\b.{0,25}\bmacros?\b|\b(?:disable|turn off)\b.{0,35}\b(?:antivirus|protected view|security software)\b|\b(?:run|execute|open|install)\b.{0,65}\.(?:exe|scr|js|vbs|hta|ps1)\b|\b(?:run|execute|install)\b.{0,40}\b(?:attached executable|attached script)\b", operational)
@@ -189,21 +181,11 @@ def _near_domain(domain, approved):
     return False
 
 
-def _confidence(resolution, supporting, contradictions, missing, margin=.5):
-    """Certainty in the action, not severity or certainty of account compromise.
-
-    Each family contributes once with strength in [0, 1]. The strongest family
-    establishes a case; corroboration and separation from alternatives refine it.
-    These are interpretable heuristic weights, not fitted probabilities.
-    """
-    _ = resolution  # All dispositions share the same uncertainty ceiling.
-    strengths = list(supporting.values()) if isinstance(supporting, dict) else [1.] * min(6, supporting)
-    strengths = sorted((max(0., min(1., value)) for value in strengths), reverse=True)
-    strongest = strengths[0] if strengths else 0.
-    score = .55 + .24 * strongest + .055 * sum(strengths[1:]) + .06 * margin
-    # Apply deficits after saturation so missing evidence always has an effect.
-    score = min(.97, score) - .07 * contradictions - .06 * missing
-    return round(max(.40, min(.97, score)), 2)
+def _confidence(resolution, supporting, contradictions, missing):
+    # Independent evidence families, not number of matching keywords.
+    score = .68 + .085 * min(4, supporting) - .07 * contradictions - .04 * min(3, missing)
+    cap = .87 if resolution == 'escalate' else .84 if resolution == 'warn' else .97
+    return round(max(.40, min(cap, score)), 2)
 
 
 def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, base_url=None) -> dict[str, Any]:
@@ -341,43 +323,11 @@ def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, ba
             raise RuntimeError('Escalation policy evidence unavailable; no disposition attempted')
     severity = 'critical' if resolution == 'escalate' else 'high' if resolution == 'quarantine' else 'medium' if resolution == 'warn' else 'low'
     uncertainties.extend('Investigation unavailable: ' + name + '.' for name in inv.failures)
-    # Strength is evidence-specific. Authentication proves sender alignment, not
-    # harmless intent; passing auth is neutral for external BEC/phishing.
-    content_strength = max(.95 if content['injection'] or content['credential'] or content['malware'] else 0.,
-                           .95 if content['gift'] or (fraud and (content['urgency'] or content['secrecy'])) else 0.,
-                           .8 if fraud else 0., .7 if privilege_risk or content['callback'] else 0.,
-                           .65 if risky_link else 0.)
-    if resolution == 'quarantine':
-        supporting = dict(identity=1. if mismatch and spoof else .6 if lookalike else 0.,
-                          authentication=1. if auth_fail else 0.,
-                          domain=1. if reputation == 'malicious' else .4 if reputation == 'suspicious' else 0.,
-                          content=content_strength, thread=.9 if switched and financial else 0.,
-                          policy=.85 if policy_id else 0.)
-        margin = 1. if content_strength >= .9 or reputation == 'malicious' or spoof or (auth_fail and domain in official | partners) else .45
-    elif resolution == 'escalate':
-        # Verified identity plus hostile behavior is evidence FOR review; the
-        # uncertainty about the cause does not imply uncertainty about this action.
-        supporting = dict(identity=1. if identity_match else 0., authentication=1. if authenticated else 0.,
-                          domain=1. if domain in official | partners else 0., content=content_strength,
-                          thread=.9 if switched and financial else 0., policy=.85 if policy_id else 0.)
-        margin = 1. if internal and content_strength >= .8 and policy_id else .6
-    else:
-        supporting = dict(identity=1. if identity_match else .35 if mismatch else 0.,
-                          authentication=(1. if resolution == 'allow' or content['report'] else .3) if authenticated else 0.,
-                          domain=1. if domain in official | partners else .8 if reputation in ('safe', 'trusted') else .5,
-                          content=.35 if email['body'] and not hostile else 0.,
-                          thread=.8 if established and not switched else 0.)
-        margin = (1. if internal else .8 if authenticated and (domain in partners or established) else .35) if resolution == 'allow' else .6 if content['report'] else .25
-    contradictions = (.75 if reputation in ('safe', 'trusted') and hostile and resolution != 'escalate' else 0.)
-    contradictions += .5 if intel_conflict and resolution == 'escalate' else 1. if intel_conflict else 0.
-    # Count unavailable families once. Unknown reputation is a small knowledge
-    # gap, not evidence against a direct credential or impersonation attack.
-    missing_auth = 1. if not auth or all(v == 'unknown' for v in (spf, dkim, dmarc)) else .5 if dmarc in ('none', 'unknown') else 0.
-    missing_domain = 1. if not rep else (.15 if hostile else .35) if reputation == 'unknown' else 0.
-    other_missing = .5 * len(set(inv.failures) - {'get_email_headers', 'inspect_domain_reputation'})
-    link_failure = .5 if rep and 'inspect_domain_reputation' in inv.failures else 0.
-    missing = missing_auth + missing_domain + other_missing + link_failure + (.25 if len(hosts) > 2 else 0.)
-    confidence = _confidence(resolution, supporting, contradictions, missing, margin)
+    supporting = sum((reputation == 'malicious', bool(hostile), bool(spoof or auth_fail), bool(switched and financial))) if resolution in ('quarantine', 'escalate') else sum((identity_match, domain in official | partners or reputation in ('safe','trusted'), authenticated, established))
+    if resolution == 'warn': supporting = 1 + int(not hostile)
+    contradictions = int(bool(conflict)) + int(reputation in ('safe','trusted') and hostile and not internal) + int(intel_conflict)
+    missing = len(inv.failures) + int(all(x in ('unknown', 'none', '') for x in (spf, dkim, dmarc))) + int(reputation == 'unknown')
+    confidence = _confidence(resolution, supporting, contradictions, missing)
     signals = [name.replace('_', ' ') for name, flag in {
         'credential_request': credential, 'financial_risk': fraud, 'malware_instructions': content['malware'],
         'prompt_injection': content['injection'], 'identity_mismatch': mismatch, 'lookalike_domain': lookalike,
