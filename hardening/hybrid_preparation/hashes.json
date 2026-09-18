@@ -1,0 +1,10 @@
+{
+  "starter-kit/starter-kit-sentinalzero/agent.py": "2cc8df02077f82efe4203f806bb21f44391192d05f0c7359e5c0208ce956aa29",
+  "hardening/final_semantics.py": "9742ff4b6ccb63b21242d95209916c65f368f80c531cd07a8d9ef6ed5b96906a",
+  "hardening/REGRESSION_ANALYSIS.md": "78c1ef6eec159ce8e87125444e1503847abe568da91e537cafa623d262aa58c3",
+  "hardening/regression_analysis.py": "b5f859fb88728529a74a1eb39845e89d708c2758ec869674fd58d714a1692c21",
+  "hardening/regression_analysis_results.json": "832e7d81c57300cba517ebd1fac21389550631f46d858684e4a67d44f4ab06f4",
+  "hardening/baseline_agent.py": "dc6118c38b0127cda831098438ee0a547b3256d9ac75d8a9ca2c48a712e86985",
+  "hardening/hybrid_candidate.patch": "5aecca463e86427942cb0bf87f4d16cabee286976b6ddccac219a40bbb8edad7",
+  "regressed_git_blob": "7cffb4d2aa091fd7481491a4346c98d2c2885dd76a9569b062f65a7d1b0de698"
+}

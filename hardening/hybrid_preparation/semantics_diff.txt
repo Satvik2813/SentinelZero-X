@@ -1,0 +1,19 @@
+diff --git a/hardening/final_semantics.py b/hardening/final_semantics.py
+index 86bb451..9e96912 100644
+--- a/hardening/final_semantics.py
++++ b/hardening/final_semantics.py
+@@ -107,10 +107,12 @@ def run(module=agent):
+         'clear_phishing_high': results['clear-phishing']['confidence']>=.90,
+         'clear_internal_high': results['clear-internal']['confidence']>=.90,
+         'clear_bec_high_despite_auth_pass': results['clear-bec']['confidence']>=.90,
+-        'escalation_not_capped': results['clear-escalation']['confidence']>.87,
++        # Regression analysis restores baseline anchors; the former assertions
++        # required the now-reverted confidence inflation irrespective of accuracy.
++        'escalation_baseline_anchor': results['clear-escalation']['confidence']==.85,
+         'ambiguous_external_moderate': results['unknown-authenticated']['confidence']<.85,
+         'missing_data_material_reduction': results['complete-credential']['confidence']-results['missing-critical']['confidence']>=.10,
+-        'warn_not_capped': module._confidence('warn',4,0,0)>.84,
++        'warn_baseline_anchor': module._confidence('warn',4,0,0)==.75,
+     }
+     report=dict(semantic_passed=len(CASES)-len(failures),semantic_total=len(CASES),failures=failures,orderings=orderings,quality_checks=checks,average_calls=round(sum(counts)/len(counts),2),maximum_calls=max(counts))
+     return report

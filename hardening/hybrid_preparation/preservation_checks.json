@@ -1,0 +1,9 @@
+{
+  "starter-kit/starter-kit-sentinalzero/agent.py": true,
+  "hardening/final_semantics.py": true,
+  "hardening/REGRESSION_ANALYSIS.md": true,
+  "hardening/regression_analysis.py": true,
+  "hardening/regression_analysis_results.json": true,
+  "hardening/baseline_agent.py": true,
+  "hardening/hybrid_candidate.patch": true
+}

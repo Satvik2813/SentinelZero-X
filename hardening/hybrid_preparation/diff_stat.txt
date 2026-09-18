@@ -1,0 +1,3 @@
+ hardening/final_semantics.py                  |  6 ++-
+ starter-kit/starter-kit-sentinalzero/agent.py | 58 +++++++++++++++------------
+ 2 files changed, 36 insertions(+), 28 deletions(-)

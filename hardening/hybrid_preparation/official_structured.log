@@ -1,0 +1,28 @@
+{
+  "passed": 30,
+  "total": 30,
+  "failures": [],
+  "maximum_calls": 8,
+  "average_calls": 7.63,
+  "average_evidence": 3.67,
+  "average_confidence": 0.893,
+  "confidence_by_disposition": {
+    "quarantine": {
+      "count": 19,
+      "mean": 0.9247
+    },
+    "warn": {
+      "count": 4,
+      "mean": 0.7275
+    },
+    "allow": {
+      "count": 6,
+      "mean": 0.91
+    },
+    "escalate": {
+      "count": 1,
+      "mean": 0.85
+    }
+  },
+  "rejections": 0
+}

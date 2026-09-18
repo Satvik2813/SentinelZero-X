@@ -1,0 +1,11 @@
+{
+  "boundary": {
+    "passed": 13,
+    "total": 13,
+    "failures": [],
+    "maximum_calls": 8,
+    "average_calls": 6.23
+  },
+  "contract_checks": 15,
+  "maximum_stress_calls": 11
+}

@@ -1,0 +1,67 @@
+{
+  "semantic_passed": 55,
+  "semantic_total": 55,
+  "failures": [],
+  "orderings": [
+    {
+      "stronger": "clear-phishing",
+      "confidence": 0.95,
+      "weaker": "ambiguous-phishing",
+      "lower_confidence": 0.74,
+      "passed": true
+    },
+    {
+      "stronger": "clear-internal",
+      "confidence": 0.95,
+      "weaker": "unknown-authenticated",
+      "lower_confidence": 0.73,
+      "passed": true
+    },
+    {
+      "stronger": "clear-bec",
+      "confidence": 0.9,
+      "weaker": "weak-suspicious",
+      "lower_confidence": 0.75,
+      "passed": true
+    },
+    {
+      "stronger": "complete-credential",
+      "confidence": 0.95,
+      "weaker": "missing-critical",
+      "lower_confidence": 0.78,
+      "passed": true
+    },
+    {
+      "stronger": "complete-credential",
+      "confidence": 0.95,
+      "weaker": "conflicting-credential",
+      "lower_confidence": 0.85,
+      "passed": true
+    },
+    {
+      "stronger": "clear-internal",
+      "confidence": 0.95,
+      "weaker": "incomplete-internal",
+      "lower_confidence": 0.69,
+      "passed": true
+    },
+    {
+      "stronger": "clear-escalation",
+      "confidence": 0.85,
+      "weaker": "weak-suspicious",
+      "lower_confidence": 0.75,
+      "passed": true
+    }
+  ],
+  "quality_checks": {
+    "clear_phishing_high": true,
+    "clear_internal_high": true,
+    "clear_bec_high_despite_auth_pass": true,
+    "escalation_baseline_anchor": true,
+    "ambiguous_external_moderate": true,
+    "missing_data_material_reduction": true,
+    "warn_baseline_anchor": true
+  },
+  "average_calls": 6.76,
+  "maximum_calls": 8
+}

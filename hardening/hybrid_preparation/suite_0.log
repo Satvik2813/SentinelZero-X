@@ -1,0 +1,488 @@
+[
+  {
+    "variant": "structured",
+    "version": "baseline",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.03,
+    "maximum_calls": 8,
+    "mean_confidence": 0.905
+  },
+  {
+    "variant": "structured",
+    "version": "regressed_04e25a6",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.8997
+  },
+  {
+    "variant": "structured",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.893
+  },
+  {
+    "variant": "date_header_lf",
+    "version": "baseline",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.03,
+    "maximum_calls": 8,
+    "mean_confidence": 0.905
+  },
+  {
+    "variant": "date_header_lf",
+    "version": "regressed_04e25a6",
+    "decision_matches": 23,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 20,
+      "warn": 10
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 49,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 5.87,
+    "maximum_calls": 7,
+    "mean_confidence": 0.826
+  },
+  {
+    "variant": "date_header_lf",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.893
+  },
+  {
+    "variant": "date_header",
+    "version": "baseline",
+    "decision_matches": 25,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 16,
+      "warn": 6,
+      "allow": 8
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.0,
+    "maximum_calls": 7,
+    "mean_confidence": 0.9
+  },
+  {
+    "variant": "date_header",
+    "version": "regressed_04e25a6",
+    "decision_matches": 23,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 20,
+      "warn": 10
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 49,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 5.87,
+    "maximum_calls": 7,
+    "mean_confidence": 0.826
+  },
+  {
+    "variant": "date_header",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.893
+  },
+  {
+    "variant": "unknown_header_first",
+    "version": "baseline",
+    "decision_matches": 25,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 16,
+      "warn": 6,
+      "allow": 8
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.0,
+    "maximum_calls": 7,
+    "mean_confidence": 0.9
+  },
+  {
+    "variant": "unknown_header_first",
+    "version": "regressed_04e25a6",
+    "decision_matches": 0,
+    "total": 30,
+    "dispositions": {},
+    "exceptions": 30,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 0,
+    "duplicate_calls": 0,
+    "average_calls": 0.0,
+    "maximum_calls": 0,
+    "mean_confidence": null
+  },
+  {
+    "variant": "unknown_header_first",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.893
+  },
+  {
+    "variant": "folded_mime",
+    "version": "baseline",
+    "decision_matches": 25,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 16,
+      "warn": 6,
+      "allow": 8
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.0,
+    "maximum_calls": 7,
+    "mean_confidence": 0.9
+  },
+  {
+    "variant": "folded_mime",
+    "version": "regressed_04e25a6",
+    "decision_matches": 23,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 20,
+      "warn": 10
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 49,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 5.87,
+    "maximum_calls": 7,
+    "mean_confidence": 0.826
+  },
+  {
+    "variant": "folded_mime",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.893
+  },
+  {
+    "variant": "thread_failure",
+    "version": "baseline",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 30,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.03,
+    "maximum_calls": 8,
+    "mean_confidence": 0.905
+  },
+  {
+    "variant": "thread_failure",
+    "version": "regressed_04e25a6",
+    "decision_matches": 24,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 10,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 3,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.8627
+  },
+  {
+    "variant": "thread_failure",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 3,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.863
+  },
+  {
+    "variant": "recipient_failure",
+    "version": "baseline",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 23,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 1,
+    "average_calls": 7.03,
+    "maximum_calls": 8,
+    "mean_confidence": 0.905
+  },
+  {
+    "variant": "recipient_failure",
+    "version": "regressed_04e25a6",
+    "decision_matches": 24,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 10,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 23,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.8637
+  },
+  {
+    "variant": "recipient_failure",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 23,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.864
+  },
+  {
+    "variant": "body_header",
+    "version": "baseline",
+    "decision_matches": 4,
+    "total": 30,
+    "dispositions": {
+      "warn": 30
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 58,
+    "confirmed_single_actions": 0,
+    "duplicate_calls": 0,
+    "average_calls": 7.0,
+    "maximum_calls": 7,
+    "mean_confidence": 0.75
+  },
+  {
+    "variant": "body_header",
+    "version": "regressed_04e25a6",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.8997
+  },
+  {
+    "variant": "body_header",
+    "version": "hybrid",
+    "decision_matches": 30,
+    "total": 30,
+    "dispositions": {
+      "quarantine": 19,
+      "warn": 4,
+      "allow": 6,
+      "escalate": 1
+    },
+    "exceptions": 0,
+    "rejections": 0,
+    "unobserved_citations": 0,
+    "missing_required_citations": 0,
+    "confirmed_single_actions": 30,
+    "duplicate_calls": 0,
+    "average_calls": 7.63,
+    "maximum_calls": 8,
+    "mean_confidence": 0.893
+  }
+]
+Hybrid differential scenarios: 240/240 decisions; body headers remain isolated.

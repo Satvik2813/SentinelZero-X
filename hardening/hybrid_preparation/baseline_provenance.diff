@@ -1,0 +1,30 @@
+--- a895b28
++++ baseline_agent.py
+@@ -111,6 +111,27 @@
+     recipient_email = str(payload.get("recipient_email", "")).strip().lower()
+     subject = str(payload.get("subject", ""))
+     body = str(payload.get("message_body", ""))
++
++    if not message_id and "customer_message" in task:
++        raw_msg = task["customer_message"]
++        for line in raw_msg.split("\n"):
++            line_s = line.strip()
++            low = line_s.lower()
++            if low.startswith("message-id:"):
++                message_id = line_s.split(":", 1)[1].strip()
++            elif low.startswith("from:"):
++                sender_email = line_s.split(":", 1)[1].strip().lower()
++            elif low.startswith("to:"):
++                recipient_email = line_s.split(":", 1)[1].strip().lower()
++            elif low.startswith("subject:"):
++                subject = line_s.split(":", 1)[1].strip()
++            elif low.startswith("thread-id:") or low.startswith("references:"):
++                thread_id = line_s.split(":", 1)[1].strip()
++        parts = raw_msg.split("\n\n", 1)
++        body = parts[1].strip() if len(parts) > 1 else ""
++        if not recipient_email:
++            recipient_email = str(task.get("customer_id", "")).strip().lower()
++
+     sender_domain = _extract_domain(sender_email)
+ 
+     evidence_ids = set()

@@ -1,0 +1,37 @@
+[
+  {
+    "command": "python -B hardening/regression_analysis.py",
+    "exit_code": 0,
+    "log": "suite_0.log"
+  },
+  {
+    "command": "python -B hardening/regression.py",
+    "exit_code": 1,
+    "log": "suite_1.log"
+  },
+  {
+    "command": "python -B hardening/regression.py --live-format",
+    "exit_code": 1,
+    "log": "suite_2.log"
+  },
+  {
+    "command": "python -B hardening/adversarial.py",
+    "exit_code": 0,
+    "log": "suite_3.log"
+  },
+  {
+    "command": "python -B hardening/adversarial.py --mutations",
+    "exit_code": 0,
+    "log": "suite_4.log"
+  },
+  {
+    "command": "python -B hardening/boundaries.py",
+    "exit_code": 0,
+    "log": "suite_5.log"
+  },
+  {
+    "command": "python -B hardening/final_semantics.py",
+    "exit_code": 0,
+    "log": "suite_6.log"
+  }
+]

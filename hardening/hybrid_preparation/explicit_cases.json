@@ -1,0 +1,4410 @@
+{
+  "summary": [
+    {
+      "variant": "date_header_lf",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 0,
+      "reduced_confidence": 0
+    },
+    {
+      "variant": "date_header",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 0,
+      "reduced_confidence": 0
+    },
+    {
+      "variant": "unknown_header_first",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 0,
+      "reduced_confidence": 0
+    },
+    {
+      "variant": "folded_mime",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 0,
+      "reduced_confidence": 0
+    },
+    {
+      "variant": "body_header",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 0,
+      "reduced_confidence": 0
+    },
+    {
+      "variant": "thread_failure",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 30,
+      "reduced_confidence": 30
+    },
+    {
+      "variant": "recipient_failure",
+      "passed": 30,
+      "dispositions": {
+        "quarantine": 19,
+        "warn": 4,
+        "allow": 6,
+        "escalate": 1
+      },
+      "identity_and_targets_verified": 30,
+      "disclosed_failures": 29,
+      "reduced_confidence": 29
+    }
+  ],
+  "cases": [
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-006C",
+        "POL-002",
+        "THR-DEV-006"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-016C",
+        "POL-002",
+        "THR-DEV-016"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.85,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-026C",
+        "POL-002",
+        "THR-DEV-026"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "date_header_lf",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.75,
+      "normal_confidence": 0.75,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-006C",
+        "POL-002",
+        "THR-DEV-006"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-016C",
+        "POL-002",
+        "THR-DEV-016"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.85,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-026C",
+        "POL-002",
+        "THR-DEV-026"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "date_header",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.75,
+      "normal_confidence": 0.75,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-006C",
+        "POL-002",
+        "THR-DEV-006"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-016C",
+        "POL-002",
+        "THR-DEV-016"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.85,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-026C",
+        "POL-002",
+        "THR-DEV-026"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "unknown_header_first",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.75,
+      "normal_confidence": 0.75,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-006C",
+        "POL-002",
+        "THR-DEV-006"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-016C",
+        "POL-002",
+        "THR-DEV-016"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.85,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-026C",
+        "POL-002",
+        "THR-DEV-026"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "folded_mime",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.75,
+      "normal_confidence": 0.75,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-006C",
+        "POL-002",
+        "THR-DEV-006"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-016C",
+        "POL-002",
+        "THR-DEV-016"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.85,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-026C",
+        "POL-002",
+        "THR-DEV-026"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.95,
+      "normal_confidence": 0.95,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.87,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "body_header",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.75,
+      "normal_confidence": 0.75,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.69,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-006C",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.69,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-016C",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-109",
+        "EMP-1010",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.82,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-103",
+        "EMP-1007",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.69,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-105",
+        "EMP-1006",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-104",
+        "EMP-1004",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "EMP-1009",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "EMP-1009",
+        "MSG-DEV-026C",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-102",
+        "EMP-1008",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-107",
+        "EMP-1006",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "thread_failure",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.72,
+      "normal_confidence": 0.75,
+      "uncertainties": [
+        "Investigation unavailable: get_thread_history."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-001",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-001",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-001",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-002",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-002",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-103",
+        "MSG-DEV-002",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-003",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-003",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.69,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-105",
+        "MSG-DEV-003"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-004",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-004",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-104",
+        "MSG-DEV-004",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-005",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-005",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "MSG-DEV-005",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-006",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-006C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "MSG-DEV-006C",
+        "POL-002",
+        "THR-DEV-006"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-007",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-007",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-102",
+        "MSG-DEV-007",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-008",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-008",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-008"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-009",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-009",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-107",
+        "MSG-DEV-009"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-010",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-010",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-109",
+        "MSG-DEV-010",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-011",
+      "sender": "aris.vance@sentinel-acme-support.com",
+      "target": "MSG-DEV-011",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-101",
+        "EMP-1001",
+        "MSG-DEV-011",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-012",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-012",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-103",
+        "MSG-DEV-012",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-013",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-013",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.69,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-105",
+        "MSG-DEV-013"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-014",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-014",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-104",
+        "MSG-DEV-014",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-015",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-015",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "MSG-DEV-015",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-016",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-016C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "MSG-DEV-016C",
+        "POL-002",
+        "THR-DEV-016"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-017",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-017",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-102",
+        "MSG-DEV-017",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-018",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-018",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-018"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-019",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-019",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-107",
+        "MSG-DEV-019"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-020",
+      "sender": "promo@sentinel-acme-verify.info",
+      "target": "MSG-DEV-020",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-109",
+        "MSG-DEV-020",
+        "POL-005"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-021",
+      "sender": "aris.vance@sentinel-acme.edu",
+      "target": "MSG-DEV-021",
+      "resolution": "escalate",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.82,
+      "normal_confidence": 0.85,
+      "uncertainties": [
+        "Trusted identity and high-risk signals conflict; possible account compromise.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1001",
+        "MSG-DEV-021",
+        "POL-006"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-022",
+      "sender": "billing@apex-labs-procurement.xyz",
+      "target": "MSG-DEV-022",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-103",
+        "MSG-DEV-022",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-023",
+      "sender": "organizer@tech-symposium-2026.org",
+      "target": "MSG-DEV-023",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.69,
+      "normal_confidence": 0.72,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-105",
+        "MSG-DEV-023"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-024",
+      "sender": "admin@secure-login-sentinel.net",
+      "target": "MSG-DEV-024",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-104",
+        "MSG-DEV-024",
+        "POL-003"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-025",
+      "sender": "elena.rostova.acme@gmail.com",
+      "target": "MSG-DEV-025",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Directory identity matches a different official address; identity is unverified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "EMP-1002",
+        "MSG-DEV-025",
+        "POL-002"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-026",
+      "sender": "project.coordinator.acme@gmail.com",
+      "target": "MSG-DEV-026C",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Sender reputation is unverified.",
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "MSG-DEV-026C",
+        "POL-002",
+        "THR-DEV-026"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-027",
+      "sender": "registrar@sentinel-acme.co",
+      "target": "MSG-DEV-027",
+      "resolution": "quarantine",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-102",
+        "MSG-DEV-027",
+        "POL-001"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-028",
+      "sender": "david.chen@sentinel-acme.edu",
+      "target": "MSG-DEV-028",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.92,
+      "normal_confidence": 0.95,
+      "uncertainties": [
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-001",
+        "EMP-1004",
+        "MSG-DEV-028"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-029",
+      "sender": "k.sharma@quantum-computing-workshop.edu.in",
+      "target": "MSG-DEV-029",
+      "resolution": "allow",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.84,
+      "normal_confidence": 0.87,
+      "uncertainties": [
+        "Aligned sender authentication is not fully verified.",
+        "Investigation unavailable: lookup_directory."
+      ],
+      "evidence": [
+        "DOM-107",
+        "MSG-DEV-029"
+      ]
+    },
+    {
+      "variant": "recipient_failure",
+      "task": "TASK-DEV-030",
+      "sender": "carlos.mendez@sentinel-acme.edu",
+      "target": "MSG-DEV-030",
+      "resolution": "warn",
+      "successful_actions": 1,
+      "unobserved_citations": 0,
+      "confidence": 0.75,
+      "normal_confidence": 0.75,
+      "uncertainties": [],
+      "evidence": [
+        "DOM-001",
+        "EMP-1010",
+        "MSG-DEV-030"
+      ]
+    }
+  ],
+  "core_failure_checks": [
+    {
+      "tool": "get_email_headers",
+      "task": "TASK-DEV-008",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_email_headers",
+      "task": "TASK-DEV-009",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_email_headers",
+      "task": "TASK-DEV-018",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_email_headers",
+      "task": "TASK-DEV-019",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_email_headers",
+      "task": "TASK-DEV-028",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_email_headers",
+      "task": "TASK-DEV-029",
+      "resolution": "warn"
+    },
+    {
+      "tool": "inspect_domain_reputation",
+      "task": "TASK-DEV-008",
+      "resolution": "warn"
+    },
+    {
+      "tool": "inspect_domain_reputation",
+      "task": "TASK-DEV-009",
+      "resolution": "warn"
+    },
+    {
+      "tool": "inspect_domain_reputation",
+      "task": "TASK-DEV-018",
+      "resolution": "warn"
+    },
+    {
+      "tool": "inspect_domain_reputation",
+      "task": "TASK-DEV-019",
+      "resolution": "warn"
+    },
+    {
+      "tool": "inspect_domain_reputation",
+      "task": "TASK-DEV-028",
+      "resolution": "warn"
+    },
+    {
+      "tool": "inspect_domain_reputation",
+      "task": "TASK-DEV-029",
+      "resolution": "warn"
+    },
+    {
+      "tool": "lookup_directory",
+      "task": "TASK-DEV-008",
+      "resolution": "warn"
+    },
+    {
+      "tool": "lookup_directory",
+      "task": "TASK-DEV-009",
+      "resolution": "warn"
+    },
+    {
+      "tool": "lookup_directory",
+      "task": "TASK-DEV-018",
+      "resolution": "warn"
+    },
+    {
+      "tool": "lookup_directory",
+      "task": "TASK-DEV-019",
+      "resolution": "warn"
+    },
+    {
+      "tool": "lookup_directory",
+      "task": "TASK-DEV-028",
+      "resolution": "warn"
+    },
+    {
+      "tool": "lookup_directory",
+      "task": "TASK-DEV-029",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_approved_domains",
+      "task": "TASK-DEV-008",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_approved_domains",
+      "task": "TASK-DEV-009",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_approved_domains",
+      "task": "TASK-DEV-018",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_approved_domains",
+      "task": "TASK-DEV-019",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_approved_domains",
+      "task": "TASK-DEV-028",
+      "resolution": "warn"
+    },
+    {
+      "tool": "get_approved_domains",
+      "task": "TASK-DEV-029",
+      "resolution": "warn"
+    }
+  ]
+}

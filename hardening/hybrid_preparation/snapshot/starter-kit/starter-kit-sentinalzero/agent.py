@@ -65,8 +65,7 @@ def _normalize(task):
     raw = _text(task.get("customer_message")).replace("\r\n", "\n").replace("\r", "\n")
     aliases = {"message-id": "message_id", "message_id": "message_id", "thread-id": "thread_id",
                "thread_id": "thread_id", "from": "sender_email", "to": "recipient_email",
-               "subject": "subject", "sender-ip": "sender_ip", "references": "references",
-               "reply-to": "reply_to"}
+               "subject": "subject", "sender-ip": "sender_ip", "references": "references"}
     parsed = {}
     lines = raw.split("\n")
     body_start = len(lines)
@@ -91,7 +90,6 @@ def _normalize(task):
     parsed["body"] = "\n".join(lines[body_start:]).strip()
     result = {key: _text(payload.get(key)) or _text(parsed.get(key))
               for key in ("message_id", "thread_id", "sender_email", "recipient_email", "subject", "sender_ip")}
-    result["reply_to"] = _address(payload.get("reply_to"))[1] or _address(parsed.get("reply_to"))[1]
     result["body"] = _text(payload.get("message_body")) or _text(payload.get("body")) or parsed["body"]
     # References normally contains message IDs, not an API thread identifier.
     if not result["thread_id"] and re.fullmatch(r"THR-[\w-]+", parsed.get("references", "")):
@@ -263,9 +261,6 @@ def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, ba
     switched = bool(previous and sender not in old_senders and old_senders - {'', email['recipient_email']})
     established = bool(sender in old_senders and email['recipient_email'] in old_senders and len(previous) >= 2)
     reply_to = _address(headers.get('reply_to'))[1]
-    # Only original header metadata can replace the tool's synthetic Reply-To.
-    if reply_to == "sender@unknown.com":
-        reply_to = email["reply_to"]
     diverted = bool(reply_to and _extract_domain(reply_to) != domain and _extract_domain(reply_to) not in official | partners)
     # Inspect at most two unique link hosts when the requested action is sensitive.
     urls = re.findall(r'https?://[^\s<>\x22\x27]+', html.unescape(email['body']), re.I)

@@ -1,0 +1,103 @@
+Traceback (most recent call last):
+  File "C:\Users\Praveen\Documents\SentinelZero-X\hardening\regression.py", line 20, in run
+    with TestClient(server.app) as client:
+         ~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\testclient.py", line 697, in __enter__
+    portal.call(self.wait_startup)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anyio\from_thread.py", line 334, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 450, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anyio\from_thread.py", line 259, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\testclient.py", line 732, in wait_startup
+    await receive()
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\testclient.py", line 723, in receive
+    self.task.result()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anyio\from_thread.py", line 259, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\testclient.py", line 713, in lifespan
+    await self.app(scope, self.stream_receive.receive, self.stream_send.send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\exceptions.py", line 49, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 2726, in app
+    await self.lifespan(scope, receive, send)
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\routing.py", line 638, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\Documents\SentinelZero-X\starter-kit\starter-kit-sentinalzero\mock_simulator\server.py", line 1300, in lifespan
+    init_db()
+    ~~~~~~~^^
+  File "C:\Users\Praveen\Documents\SentinelZero-X\starter-kit\starter-kit-sentinalzero\mock_simulator\server.py", line 630, in init_db
+    conn = sqlite3.connect(DB_PATH)
+sqlite3.OperationalError: unable to open database file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 377, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Praveen\\AppData\\Local\\Temp\\tmptm96jpxx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Praveen\Documents\SentinelZero-X\hardening\regression.py", line 67, in <module>
+    result=run(module,'--live-format' in sys.argv)
+  File "C:\Users\Praveen\Documents\SentinelZero-X\hardening\regression.py", line 18, in run
+    with tempfile.TemporaryDirectory() as temp:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 971, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 689, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 413, in walk
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 687, in onerror
+    onexc(os.scandir, err.filename, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Praveen\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Praveen\\AppData\\Local\\Temp\\tmptm96jpxx'

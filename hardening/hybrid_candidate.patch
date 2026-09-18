@@ -1,0 +1,139 @@
+diff --git a/hardening/final_semantics.py b/hardening/final_semantics.py
+index 86bb451..9e96912 100644
+--- a/hardening/final_semantics.py
++++ b/hardening/final_semantics.py
+@@ -107,10 +107,12 @@ def run(module=agent):
+         'clear_phishing_high': results['clear-phishing']['confidence']>=.90,
+         'clear_internal_high': results['clear-internal']['confidence']>=.90,
+         'clear_bec_high_despite_auth_pass': results['clear-bec']['confidence']>=.90,
+-        'escalation_not_capped': results['clear-escalation']['confidence']>.87,
++        # Regression analysis restores baseline anchors; the former assertions
++        # required the now-reverted confidence inflation irrespective of accuracy.
++        'escalation_baseline_anchor': results['clear-escalation']['confidence']==.85,
+         'ambiguous_external_moderate': results['unknown-authenticated']['confidence']<.85,
+         'missing_data_material_reduction': results['complete-credential']['confidence']-results['missing-critical']['confidence']>=.10,
+-        'warn_not_capped': module._confidence('warn',4,0,0)>.84,
++        'warn_baseline_anchor': module._confidence('warn',4,0,0)==.75,
+     }
+     report=dict(semantic_passed=len(CASES)-len(failures),semantic_total=len(CASES),failures=failures,orderings=orderings,quality_checks=checks,average_calls=round(sum(counts)/len(counts),2),maximum_calls=max(counts))
+     return report
+diff --git a/starter-kit/starter-kit-sentinalzero/agent.py b/starter-kit/starter-kit-sentinalzero/agent.py
+index 6e2de2e..7525dba 100644
+--- a/starter-kit/starter-kit-sentinalzero/agent.py
++++ b/starter-kit/starter-kit-sentinalzero/agent.py
+@@ -75,12 +75,15 @@ def _normalize(task):
+             body_start = i + 1
+             break
+         match = re.match(r"^\s*([\w-]+)\s*:\s*(.*)$", line)
+-        if match and match[1].lower() in aliases:
+-            key = aliases[match[1].lower()]
+-            parsed.setdefault(key, match[2].strip())
+-            last = key
+-        elif line[:1].isspace() and last:
+-            parsed[last] += " " + line.strip()
++        if match:
++            # Date, Received and MIME headers do not terminate the header block.
++            # Still stop at the blank line: body text cannot overwrite identity.
++            last = aliases.get(match[1].lower())
++            if last:
++                parsed.setdefault(last, match[2].strip())
++        elif line[:1].isspace() and i > 0:
++            if last:
++                parsed[last] += " " + line.strip()
+         else:
+             body_start = i
+             break
+@@ -189,21 +192,23 @@ def _near_domain(domain, approved):
+     return False
+ 
+ 
+-def _confidence(resolution, supporting, contradictions, missing, margin=.5):
+-    """Certainty in the action, not severity or certainty of account compromise.
++def _confidence(resolution, supporting, contradictions, missing):
++    """Baseline confidence anchors, reduced for uncertainty rather than inflated.
+ 
+-    Each family contributes once with strength in [0, 1]. The strongest family
+-    establishes a case; corroboration and separation from alternatives refine it.
+-    These are interpretable heuristic weights, not fitted probabilities.
++    Policy retrieval authorizes an action; it does not independently prove a
++    threat. Neither it nor a hand-assigned decision margin earns a score bonus.
+     """
+-    _ = resolution  # All dispositions share the same uncertainty ceiling.
+-    strengths = list(supporting.values()) if isinstance(supporting, dict) else [1.] * min(6, supporting)
+-    strengths = sorted((max(0., min(1., value)) for value in strengths), reverse=True)
+-    strongest = strengths[0] if strengths else 0.
+-    score = .55 + .24 * strongest + .055 * sum(strengths[1:]) + .06 * margin
+-    # Apply deficits after saturation so missing evidence always has an effect.
+-    score = min(.97, score) - .07 * contradictions - .06 * missing
+-    return round(max(.40, min(.97, score)), 2)
++    if not isinstance(supporting, dict):
++        supporting = dict.fromkeys(('identity', 'authentication', 'domain', 'content', 'thread', 'policy')[:supporting], 1.)
++    if resolution == 'allow':
++        score = .95 if supporting.get('identity', 0.) == 1. and supporting.get('authentication', 0.) == 1. else .90
++    elif resolution == 'quarantine':
++        score = .95 if supporting.get('domain', 0.) == 1. else .90
++        if supporting.get('domain', 0.) < 1. and supporting.get('content', 0.) < .9 and supporting.get('identity', 0.) < .6:
++            score = .82  # Inferred threat rather than corroborated/direct abuse.
++    else:
++        score = .85 if resolution == 'escalate' else .75
++    return round(max(.40, score - .07 * contradictions - .06 * missing), 2)
+ 
+ 
+ def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, base_url=None) -> dict[str, Any]:
+@@ -229,6 +234,10 @@ def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, ba
+     recipient = inv.read('lookup_directory', email['recipient_email']) if email['recipient_email'] else {}
+     recipient_emp = _dict(recipient.get('employee'))
+     thread = inv.read('get_thread_history', email['thread_id']) if email['thread_id'] else {}
++    # Restore baseline tolerance of optional thread/recipient lookup failures.
++    # Failure of a core identity/authentication/reputation check still prevents
++    # ALLOW; a failed optional query is disclosed and lowers confidence instead.
++    core_ready = bool(headers and rep and directory and approved)
+     official = {_canonical(d) for d in _items(approved.get('official_domains')) if _text(d)}
+     partners = {_canonical(d) for d in _items(approved.get('partner_domains')) if _text(d)}
+     reputation = _canonical(rep.get('reputation')) or 'unknown'
+@@ -301,9 +310,9 @@ def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, ba
+         resolution, classification = 'warn', 'suspicious_unknown'
+     elif auth_fail or (spf == 'fail' and not authenticated) or mismatch or lookalike or diverted or intel_conflict or reputation == 'suspicious' or not sender:
+         resolution, classification = 'warn', 'suspicious_unknown'
+-    elif internal and not inv.failures:
++    elif internal and core_ready:
+         resolution, classification = 'allow', 'internal_legitimate'
+-    elif (reputation in ('safe', 'trusted') or domain in partners or (established and authenticated)) and not inv.failures:
++    elif (reputation in ('safe', 'trusted') or domain in partners or (established and authenticated)) and core_ready:
+         resolution, classification = 'allow', 'external_legitimate'
+     else:
+         resolution, classification = 'warn', 'suspicious_unknown'
+@@ -353,31 +362,28 @@ def solve(task: dict[str, Any], tools: ToolsClient, api_key=None, model=None, ba
+                           domain=1. if reputation == 'malicious' else .4 if reputation == 'suspicious' else 0.,
+                           content=content_strength, thread=.9 if switched and financial else 0.,
+                           policy=.85 if policy_id else 0.)
+-        margin = 1. if content_strength >= .9 or reputation == 'malicious' or spoof or (auth_fail and domain in official | partners) else .45
+     elif resolution == 'escalate':
+         # Verified identity plus hostile behavior is evidence FOR review; the
+         # uncertainty about the cause does not imply uncertainty about this action.
+         supporting = dict(identity=1. if identity_match else 0., authentication=1. if authenticated else 0.,
+                           domain=1. if domain in official | partners else 0., content=content_strength,
+                           thread=.9 if switched and financial else 0., policy=.85 if policy_id else 0.)
+-        margin = 1. if internal and content_strength >= .8 and policy_id else .6
+     else:
+         supporting = dict(identity=1. if identity_match else .35 if mismatch else 0.,
+                           authentication=(1. if resolution == 'allow' or content['report'] else .3) if authenticated else 0.,
+                           domain=1. if domain in official | partners else .8 if reputation in ('safe', 'trusted') else .5,
+                           content=.35 if email['body'] and not hostile else 0.,
+                           thread=.8 if established and not switched else 0.)
+-        margin = (1. if internal else .8 if authenticated and (domain in partners or established) else .35) if resolution == 'allow' else .6 if content['report'] else .25
+     contradictions = (.75 if reputation in ('safe', 'trusted') and hostile and resolution != 'escalate' else 0.)
+     contradictions += .5 if intel_conflict and resolution == 'escalate' else 1. if intel_conflict else 0.
+     # Count unavailable families once. Unknown reputation is a small knowledge
+     # gap, not evidence against a direct credential or impersonation attack.
+     missing_auth = 1. if not auth or all(v == 'unknown' for v in (spf, dkim, dmarc)) else .5 if dmarc in ('none', 'unknown') else 0.
+-    missing_domain = 1. if not rep else (.15 if hostile else .35) if reputation == 'unknown' else 0.
++    missing_domain = 1. if not rep else (0. if content_strength >= .9 else .35) if reputation == 'unknown' else 0.
+     other_missing = .5 * len(set(inv.failures) - {'get_email_headers', 'inspect_domain_reputation'})
+     link_failure = .5 if rep and 'inspect_domain_reputation' in inv.failures else 0.
+     missing = missing_auth + missing_domain + other_missing + link_failure + (.25 if len(hosts) > 2 else 0.)
+-    confidence = _confidence(resolution, supporting, contradictions, missing, margin)
++    confidence = _confidence(resolution, supporting, contradictions, missing)
+     signals = [name.replace('_', ' ') for name, flag in {
+         'credential_request': credential, 'financial_risk': fraud, 'malware_instructions': content['malware'],
+         'prompt_injection': content['injection'], 'identity_mismatch': mismatch, 'lookalike_domain': lookalike,

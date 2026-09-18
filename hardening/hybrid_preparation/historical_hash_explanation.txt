@@ -1,0 +1,1 @@
+Supplied historical hash reproduced by Git blob with a single CRLF at line 404, all other lines LF. No source-content difference.
